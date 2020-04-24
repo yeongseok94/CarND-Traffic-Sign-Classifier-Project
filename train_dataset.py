@@ -155,7 +155,7 @@ with tf.Session() as sess:
         print("Test Accuracy = {:.3f}".format(test_accuracy))
         print()
         
-    saver.save(sess, './lenet')
+    saver.save(sess, './YS_net')
     print("Model saved")
 
 #%% Load the new dataset & Preprocess
