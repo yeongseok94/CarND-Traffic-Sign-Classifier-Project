@@ -56,7 +56,7 @@ Number of classes = 43
 
 #### 2. Include an exploratory visualization of the dataset.
 
-Here is an exploratory visualization of the data set. This shows 9 random image from the training dataset and its corresponding label.
+Here is an exploratory visualization of the data set. This shows 9 random image from the training dataset and its corresponding label of sign types.
 
 ![alt text][image1]
 
@@ -64,43 +64,31 @@ Here is an exploratory visualization of the data set. This shows 9 random image 
 
 #### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
-As a first step, I decided to convert the images to grayscale because ...
+As a first step, I decided to convert the images to grayscale because reducing the input data size leads to fast and efficient classification of the given dataset, and grayscaling the image is just enough with preserving original image's features. Here, I used `cv2.cvtColor()` function to convert the given RGB image into grayscale.
 
-Here is an example of a traffic sign image before and after grayscaling.
+As a second step, I normalized the image data because scaling data as zero-mean with low variance is generally good to train the network since we initialize the weights as zero-mean Gaussian with low variance and biases as zero. The normalizing analogy of pixel values is simply `(pixel-128)/128`.
 
-![alt text][image2]
-
-As a last step, I normalized the image data because ...
-
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
-
-![alt text][image3]
-
-The difference between the original data set and the augmented data set is the following ... 
-
+As a last step, I augmented all the preprocessed images and reshaped the image data to have the dimension of `(# of images, 32, 32, 1)`, in order to make the dataset compatible with the rest of the code.
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
 My final model consisted of the following layers:
 
-| Layer         		|     Description	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
-| RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
+| Layer         		|     Description	                   					| 
+|:---------------------:|:-----------------------------------------------------:| 
+| Input         		| 32x32x1 Grayscale image   							| 
+| Convolution 5x5     	| 1x1 stride, same padding, outputs 28x28x32        	|
+| RELU					| -								        				|
+| Max pooling	      	| 2x2 stride, outputs 14x14x32 		            		|
+| Convolution 5x5	    | 1x1 stride, same padding, outputs 10x10x64            |
+| RELU					| -								        				|
+| Max pooling	      	| 2x2 stride, outputs 5x5x64 		            		|
+| Flatten       		| outputs 1600   						        		|
+| Fully connected		| outputs 320  							        		|
+| RELU          		| -           							        		|
+| Fully connected		| outputs 43  							        		|
+| Softmax          		| -           							        		|
  
-
-
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
 To train the model, I used an ....
