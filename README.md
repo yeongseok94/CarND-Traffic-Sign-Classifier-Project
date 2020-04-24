@@ -99,9 +99,65 @@ My final model consisted of the following layers:
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* Training set accuracy of 1.000
+* Validation set accuracy of 0.950
+* Test set accuracy of 0.942
+
+As a complementary material, this is what my code prints out when training is ongoing.
+
+```
+Training...
+
+EPOCH 1 ...
+Train Accuracy = 0.964
+Validation Accuracy = 0.885
+Test Accuracy = 0.870
+
+EPOCH 2 ...
+Train Accuracy = 0.992
+Validation Accuracy = 0.925
+Test Accuracy = 0.904
+
+EPOCH 3 ...
+Train Accuracy = 0.993
+Validation Accuracy = 0.919
+Test Accuracy = 0.914
+
+EPOCH 4 ...
+Train Accuracy = 0.996
+Validation Accuracy = 0.938
+Test Accuracy = 0.922
+
+EPOCH 5 ...
+Train Accuracy = 0.995
+Validation Accuracy = 0.935
+Test Accuracy = 0.925
+
+EPOCH 6 ...
+Train Accuracy = 0.997
+Validation Accuracy = 0.932
+Test Accuracy = 0.932
+
+EPOCH 7 ...
+Train Accuracy = 0.998
+Validation Accuracy = 0.943
+Test Accuracy = 0.930
+
+EPOCH 8 ...
+Train Accuracy = 0.995
+Validation Accuracy = 0.929
+Test Accuracy = 0.919
+
+EPOCH 9 ...
+Train Accuracy = 0.999
+Validation Accuracy = 0.947
+Test Accuracy = 0.933
+
+EPOCH 10 ...
+Train Accuracy = 1.000
+Validation Accuracy = 0.950
+Test Accuracy = 0.942
+```
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
