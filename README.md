@@ -180,37 +180,95 @@ The images might be difficult to classify because this is not actually German on
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
+Here are my code's printout:
+
+```
+Test Accuracy (NEW) = 0.800
+
+Image0-Probabilities: [1.0, 0.0, 0.0, 0.0, 0.0] Predicted Image: [0, 1, 2, 3, 4]
+Max:1.000000 Others:0.000000
+Image is in the top 5 predictions
+
+Image1-Probabilities: [1.0, 0.0, 0.0, 0.0, 0.0] Predicted Image: [1, 0, 2, 3, 4]
+Max:1.000000 Others:0.000000
+Image is in the top 5 predictions
+
+Image2-Probabilities: [1.0, 0.0, 0.0, 0.0, 0.0] Predicted Image: [2, 0, 1, 3, 4]
+Max:1.000000 Others:0.000000
+Image is in the top 5 predictions
+
+Image3-Probabilities: [1.0, 0.0, 0.0, 0.0, 0.0] Predicted Image: [2, 0, 1, 3, 4]
+Max:1.000000 Others:0.000000
+Image is in the top 5 predictions
+
+Image4-Probabilities: [1.0, 0.0, 0.0, 0.0, 0.0] Predicted Image: [4, 0, 1, 2, 3]
+Max:1.000000 Others:0.000000
+Image is in the top 5 predictions
+```
+
 Here are the results of the prediction:
 
-| Image			        |     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Image			        |     Prediction	    | 
+|:---------------------:|:---------------------:| 
+| Speed limit (20km/h)  | Speed limit (20km/h)	|
+| Speed limit (30km/h)  | Speed limit (30km/h)	|
+| Speed limit (50km/h)  | Speed limit (50km/h)	|
+| Speed limit (60km/h)  | Speed limit (50km/h)	|
+| Speed limit (70km/h)  | Speed limit (70km/h)	|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of the previous ones, which gives an accuracy of 94.2%. Let's talk about why the accuracy is lower in the new sets.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+For the first image, the model is very sure that this is a speed limit sign of 20km/h, and the network checks it correctly. The top five soft max probabilities were:
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+| Probability |     Prediction	      | 
+|:-----------:|:---------------------:| 
+| 1.0         | Speed limit (20km/h)  |
+| 0.0         | Speed limit (30km/h)  |
+| 0.0         | Speed limit (50km/h)  |
+| 0.0         | Speed limit (60km/h)  |
+| 0.0         | Speed limit (70km/h)  |
 
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+For the second image, the model is very sure that this is a speed limit sign of 30km/h, and the network checks it correctly. The top five soft max probabilities were:
 
+| Probability |     Prediction	      | 
+|:-----------:|:---------------------:| 
+| 1.0         | Speed limit (30km/h)  |
+| 0.0         | Speed limit (20km/h)  |
+| 0.0         | Speed limit (50km/h)  |
+| 0.0         | Speed limit (60km/h)  |
+| 0.0         | Speed limit (70km/h)  |
 
-For the second image ... 
+For the first image, the model is very sure that this is a speed limit sign of 50km/h, and the network checks it correctly. The top five soft max probabilities were:
 
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-#### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+| Probability |     Prediction	      | 
+|:-----------:|:---------------------:| 
+| 1.0         | Speed limit (50km/h)  |
+| 0.0         | Speed limit (20km/h)  |
+| 0.0         | Speed limit (30km/h)  |
+| 0.0         | Speed limit (60km/h)  |
+| 0.0         | Speed limit (70km/h)  |
 
+For the first image, the model is very sure that this is a speed limit sign of 60km/h, but the network has confident in that the sign is surely a speed limit sign of 50km/h. The top five soft max probabilities were:
 
+| Probability |     Prediction	      | 
+|:-----------:|:---------------------:| 
+| 1.0         | Speed limit (50km/h)  |
+| 0.0         | Speed limit (20km/h)  |
+| 0.0         | Speed limit (30km/h)  |
+| 0.0         | Speed limit (60km/h)  |
+| 0.0         | Speed limit (70km/h)  |
+
+For the first image, the model is very sure that this is a speed limit sign of 70km/h, and the network checks it correctly. The top five soft max probabilities were:
+
+| Probability |     Prediction	      | 
+|:-----------:|:---------------------:| 
+| 1.0         | Speed limit (70km/h)  |
+| 0.0         | Speed limit (20km/h)  |
+| 0.0         | Speed limit (30km/h)  |
+| 0.0         | Speed limit (50km/h)  |
+| 0.0         | Speed limit (60km/h)  |
+
+From the above result, the network seems to be incapable of discriminating speed limit sign of 50km/h and 60km/h. This is because this stop signs have little bit slighter fonts and thicker rim. Especially, slighter font will get more hard to discriminate when the image is downsized. In this situation, the number 5 and 6 will be more ambiguous, and it seems that my network cannot discriminate it.
