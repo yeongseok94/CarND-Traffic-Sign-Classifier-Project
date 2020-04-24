@@ -241,7 +241,7 @@ For the second image, the model is very sure that this is a speed limit sign of 
 | 0.0         | Speed limit (60km/h)  |
 | 0.0         | Speed limit (70km/h)  |
 
-For the first image, the model is very sure that this is a speed limit sign of 50km/h, and the network checks it correctly. The top five soft max probabilities were:
+For the third image, the model is very sure that this is a speed limit sign of 50km/h, and the network checks it correctly. The top five soft max probabilities were:
 
 | Probability |     Prediction	      | 
 |:-----------:|:---------------------:| 
@@ -251,7 +251,7 @@ For the first image, the model is very sure that this is a speed limit sign of 5
 | 0.0         | Speed limit (60km/h)  |
 | 0.0         | Speed limit (70km/h)  |
 
-For the first image, the model is very sure that this is a speed limit sign of 60km/h, but the network has confident in that the sign is surely a speed limit sign of 50km/h. The top five soft max probabilities were:
+For the fourth image, the model is very sure that this is a speed limit sign of 60km/h, but the network has confident in that the sign is surely a speed limit sign of 50km/h. The top five soft max probabilities were:
 
 | Probability |     Prediction	      | 
 |:-----------:|:---------------------:| 
@@ -261,7 +261,7 @@ For the first image, the model is very sure that this is a speed limit sign of 6
 | 0.0         | Speed limit (60km/h)  |
 | 0.0         | Speed limit (70km/h)  |
 
-For the first image, the model is very sure that this is a speed limit sign of 70km/h, and the network checks it correctly. The top five soft max probabilities were:
+For the fifth image, the model is very sure that this is a speed limit sign of 70km/h, and the network checks it correctly. The top five soft max probabilities were:
 
 | Probability |     Prediction	      | 
 |:-----------:|:---------------------:| 
