@@ -14,13 +14,7 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./fig1.png "Exploartory"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image2]: ./fig2.png "Traffic Signs"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -88,6 +82,7 @@ My final model consisted of the following layers:
 | RELU          		| -           							        		|
 | Fully connected		| outputs 43  							        		|
 | Softmax          		| -           							        		|
+| Output          		| 43 Probabilities						        		|
  
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
@@ -161,26 +156,25 @@ Test Accuracy = 0.942
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
-    * sdfsdf
+    * The first trial was from the LeNet with only the input and output size adapted to my dataset. This is because the LeNet is one of the most well-known basic convolutional neural network.
 * What were some problems with the initial architecture?
+    * The inital number of labels of the convolutional layers were only 6 and 16, where number of output labels is 43.
+    * Since the size of image is not much big, 3 fully connected layer is not necessary.
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
+    * The number of labels of the convolutional layers were tuned to 32 and 64, which can cover all the features of 43 labels.
+    * The number of fully connected layer was reduced to 2. Then, the size of the second fully connected layer was decided to have the size of 320. The idea of deciding the size of this layer comes from the last layer the original LeNet which has about 8 times bigger size than the output layer.
 * Which parameters were tuned? How were they adjusted and why?
+    * By trial and error, the batch size was tuned to 64, which is quite small, since the image is small.
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
-
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
+    * The number of labels of the convolutional layers should be large enough to cover all the number of features of outputs. However, this should be just a little bit bigger than the number of output labels. Excessively big number of labels of the convolutional layer just leads to computational burden and has no effect on the accuracy.
 
 ### Test a Model on New Images
 
 #### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
-Here are five German traffic signs that I found on the web:
+Here are five traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text][image2]
 
 The first image might be difficult to classify because ...
 
